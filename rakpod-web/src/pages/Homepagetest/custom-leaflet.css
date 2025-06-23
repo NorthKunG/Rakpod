@@ -1,0 +1,10 @@
+/* custom-leaflet.css */
+
+/* Override default font styles for Leaflet elements */
+.leaflet-container,
+.leaflet-popup-content,
+.leaflet-control {
+font-family: "Poppins","Noto Sans Thai";
+}
+
+/* Additional custom styles if needed */

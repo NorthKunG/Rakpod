@@ -1,0 +1,53 @@
+.custom-popup .leaflet-popup-content-wrapper {
+  border-radius: 0px;
+  @apply bg-red-500;
+}
+.custom-popup .leaflet-popup-tip-container {
+  @apply opacity-0;
+}
+.circle-grey {
+  @apply bg-[#C5C5C5] rounded-full text-center border-2 border-[#939393] text-gray-700 shadow-[0px_0px_150px_30px_rgba(0,0,0,0.4)];
+}
+
+.circle-white {
+  @apply bg-[#FFFFFF] rounded-full text-center border-2 border-[#FFFFFF] text-gray-700 ;
+}
+
+.circle-red {
+  @apply bg-[#E64848] rounded-full text-center border-2 border-[#C21010] text-gray-700 shadow-[0px_0px_150px_30px_rgba(0,0,0,0.4)] shadow-red-500;
+}
+.circle-green {
+  @apply bg-[#82CD47] rounded-full text-center border-2 border-[#379237] text-gray-700 shadow-[0px_0px_150px_30px_rgba(0,0,0,0.4)] shadow-green-500;
+}
+.circle-blue {
+  @apply bg-[#47B5FF] rounded-full text-center border-2 border-[#256D85] text-gray-700 shadow-[0px_0px_150px_30px_rgba(0,0,0,0.4)] shadow-blue-500;
+}
+.circle-orange {
+  @apply bg-[#FD841F] rounded-full text-center border-2 border-[#E14D2A] text-gray-700 shadow-[0px_0px_150px_30px_rgba(0,0,0,0.4)] shadow-orange-500;
+}
+.circle-yellow {
+  @apply bg-[#FFEA11] rounded-full text-center border-2 border-[#FFC900] text-gray-700 shadow-yellow-500   shadow-[0px_0px_150px_30px_rgba(0,0,0,0.4)];
+}
+.circle-grey-home {
+  @apply bg-[#C5C5C5] rounded-full text-center border-2 border-[#939393] text-gray-700;
+}
+
+
+.circle-red-home {
+  @apply z-auto bg-[#E64848] rounded-full text-center border-2 border-[#C21010] text-gray-700;
+}
+.circle-green-home {
+  @apply z-auto bg-[#82CD47] rounded-full text-center border-2 border-[#379237] text-gray-700;
+}
+.circle-blue-home {
+  @apply z-auto bg-[#47B5FF] rounded-full text-center border-2 border-[#256D85] text-gray-700;
+}
+.circle-orange-home {
+  @apply z-auto bg-[#FD841F] rounded-full text-center border-2 border-[#E14D2A] text-gray-700;
+}
+.circle-yellow-home {
+  @apply z-auto bg-[#FFEA11] rounded-full text-center border-2 border-[#FFC900] text-gray-700;
+}
+.circle-white-home {
+  @apply z-[-1] bg-[#FFFFFF] rounded-full text-center border-2 border-[#FFFFFF] text-gray-700;
+}

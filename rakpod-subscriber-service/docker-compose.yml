@@ -1,0 +1,15 @@
+version: "3"
+services:
+  service:
+    container_name: "rakpod-api"
+    restart: always
+    build: .
+    ports:
+      - "2542:2542"
+    environment:
+      - TZ=Asia/Bangkok
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - ../export_files:/app/export_files
+      - ../smart-environment-assets:/app/assets

@@ -1,0 +1,51 @@
+.card-home-kpru {
+  @apply absolute z-[1001] w-full max-w-[1100px]     bottom-5 left-1/2 transform -translate-x-1/2 bg-[#FFFFFF90] bg-opacity-50 backdrop-filter backdrop-blur text-center p-2 rounded-lg;
+}
+
+.card-home {
+  @apply absolute z-[1001] w-full max-w-[1100px] h-[auto]     bottom-5 left-1/2 transform -translate-x-1/2 bg-[#FFFFFF90] bg-opacity-50 backdrop-filter backdrop-blur text-center p-2 rounded-lg;
+}
+
+.card-home-offline {
+  @apply absolute z-[1001] w-full max-h-[230px]    bottom-5 left-1/2 transform -translate-x-1/2 bg-[#FFFFFF90] bg-opacity-50 backdrop-filter backdrop-blur text-center p-2 rounded-lg;
+}
+
+.card-map-kpru {
+  @apply absolute z-[1001] w-full max-w-[1000px]  bottom-5 left-1/2 transform -translate-x-1/2 bg-[#FFFFFF90] bg-opacity-50 backdrop-filter backdrop-blur text-center p-2 rounded-lg;
+}
+
+.card-map  {
+  @apply absolute z-[1001] w-full h-[320px]  bottom-5 left-1/2 transform -translate-x-1/2 bg-[#FFFFFF90] bg-opacity-50 backdrop-filter backdrop-blur text-center p-2 rounded-lg;
+}
+
+.card-map-psl  {
+  @apply absolute z-[1001] w-full  h-[260px]   bottom-0 left-1/2 transform -translate-x-1/2 bg-[#FFFFFF90] bg-opacity-50 backdrop-filter backdrop-blur text-center p-1 rounded-lg ;
+}
+
+.card-map-psl-4  {
+  @apply absolute z-[1001] w-full  h-[210px]   bottom-0 left-1/2 transform -translate-x-1/2 bg-[#FFFFFF90] bg-opacity-50 backdrop-filter backdrop-blur text-center p-1 rounded-lg ;
+}
+
+/* Adjust positioning for iPhone SE */
+@media (max-width: 320px) {
+  .card-home, .card-map {
+    right: 50%;
+    margin-right: -117px;
+  }
+}
+
+/* Adjust positioning for iPad */
+@media (min-width: 768px) {
+  .card-home {
+    /* top: 60%; */
+    height: auto;
+    right: 15%;
+    margin-right: 0;
+  }
+
+  .card-map {
+    /* top: 55%; */
+    right: 15%;
+    margin-right: 0;
+  }
+}

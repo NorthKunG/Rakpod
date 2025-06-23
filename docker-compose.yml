@@ -1,0 +1,72 @@
+version: "3"
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2.0.15
+    platform: linux/amd64
+    container_name: mosquitto
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/log:/mosquitto/log
+
+  mysql:
+    image: mysql:5.7
+    platform: linux/amd64
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: rakpod
+      TZ: Asia/Bangkok
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./rakpod-subscriber-service/src/db/table.sql:/docker-entrypoint-initdb.d/init.sql
+
+  api:
+    container_name: rakpod-api
+    build: ./rakpod-subscriber-service
+    ports:
+      - "2542:2542"
+    environment:
+      - TZ=Asia/Bangkok
+    env_file:
+      - ./rakpod-subscriber-service/.env
+    volumes:
+      - ./rakpod-subscriber-service:/app
+      - /app/node_modules
+      - ./export_files:/app/export_files
+      - ./smart-environment-assets:/app/assets
+    depends_on:
+      - mysql 
+      - mosquitto
+
+  subscriber:
+    container_name: rakpod-subscriber
+    build: ./rakpod-api-service
+    ports:
+      - "2541:2541"
+    environment:
+      - TZ=Asia/Bangkok
+    env_file:
+      - ./rakpod-api-service/.env
+    depends_on:
+      - mysql
+      - mosquitto
+
+  publisher:
+    container_name: publisher
+    build: ./device-publisher-dustboy
+    depends_on:
+      - mosquitto
+
+  web:
+    container_name: rakpod-web
+    build: ./rakpod-web
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api

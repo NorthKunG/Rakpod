@@ -1,0 +1,118 @@
+import dayjs, { Dayjs } from "dayjs";
+import buddistEra from "dayjs/plugin/buddhistEra";
+
+import th from "dayjs/locale/th";
+import localeData from "dayjs/plugin/localeData";
+import weekday from "dayjs/plugin/weekday";
+import weekOfYear from "dayjs/plugin/weekOfYear";
+
+dayjs.locale(
+  {
+    ...th,
+    formats: {
+      LT: "H:mm",
+      LTS: "H:mm:ss",
+      L: "DD/MM/YYYY",
+      LL: "D MMMM YYYY",
+      LLL: "D MMMM YYYY เวลา H:mm",
+      LLLL: "วันddddที่ D MMMM YYYY เวลา H:mm",
+    },
+  },
+  undefined,
+  true
+);
+
+dayjs.extend(buddistEra);
+dayjs.extend(localeData);
+dayjs.extend(weekday);
+dayjs.extend(weekOfYear);
+type LocaleMap = Record<string, string>;
+const localeMap: LocaleMap = {
+  bn_BD: "bn-bd",
+  by_BY: "be",
+  en_GB: "en-gb",
+  en_US: "en",
+  fr_BE: "fr", // todo: dayjs has no fr_BE locale, use fr at present
+  fr_CA: "fr-ca",
+  hy_AM: "hy-am",
+  kmr_IQ: "ku",
+  nl_BE: "nl-be",
+  pt_BR: "pt-br",
+  th_TH: "th",
+  zh_CN: "zh-cn",
+  zh_HK: "zh-hk",
+  zh_TW: "zh-tw",
+};
+
+const parseLocale = (locale: string): string => {
+  return localeMap[locale] || locale.split("_")[0];
+};
+
+const parseNoMatchNotice = (): void => {
+  /* istanbul ignore next */
+  noteOnce(
+    false,
+    "Not match any format. Please help to fire a issue about this."
+  );
+};
+
+const config = {
+  ...dayjsGenerateConfig,
+  getFixedDate: (string: string) => dayjs(string, ["BBBB-M-DD", "BBBB-MM-DD"]),
+  setYear: (date: Dayjs, year: number): Dayjs => {
+    return date.year(year - 543);
+  },
+  getYear: (date: Dayjs): number => Number(date.format("BBBB")),
+  locale: {
+    getWeekFirstDay: (locale: string): number =>
+      dayjs().locale(parseLocale(locale)).localeData().firstDayOfWeek(),
+    getWeekFirstDate: (locale: string, date: Dayjs): any =>
+      date.locale(parseLocale(locale)).weekday(0),
+    getWeek: (locale: string, date: Dayjs): number =>
+      date.locale(parseLocale(locale)).week(),
+    getShortWeekDays: (locale: string): string[] =>
+      dayjs().locale(parseLocale(locale)).localeData().weekdaysMin(),
+    getShortMonths: (locale: string): string[] =>
+      dayjs().locale(parseLocale(locale)).localeData().monthsShort(),
+    format: (locale: string, date: Dayjs, format: string): string => {
+      const convertFormat = format.replace("YYYY", "BBBB");
+      return date.locale(parseLocale(locale)).format(convertFormat);
+    },
+    parse: (locale: string, text: string, formats: string[]): Dayjs | null => {
+      const localeStr = parseLocale(locale);
+      for (const element of formats) {
+        const format = element;
+        const formatText = text;
+        if (format.includes("wo") || format.includes("Wo")) {
+          // parse Wo
+          const year = formatText.split("-")[0];
+          const weekStr = formatText.split("-")[1];
+          const firstWeek = dayjs(year, "YYYY")
+            .startOf("year")
+            .locale(localeStr);
+          for (let j = 0; j <= 52; j += 1) {
+            const nextWeek = firstWeek.add(j, "week");
+            if (nextWeek.format("Wo") === weekStr) {
+              return nextWeek;
+            }
+          }
+          parseNoMatchNotice();
+          return null;
+        }
+        const date = dayjs(formatText, format, true).locale(localeStr);
+        if (date.isValid()) {
+          return date;
+        }
+      }
+
+      if (text) {
+        parseNoMatchNotice();
+      }
+      return null;
+    },
+  },
+};
+
+const DatePicker = generatePicker<Dayjs>(config);
+
+export default DatePicker;

@@ -1,0 +1,49 @@
+rakpod-subscriber-service
+ขึ้นแบบนี้่
+
+D:\Rakpod\rakpod-subscriber-service>npm run start
+
+> api-service@1.0.0 start
+> ts-node src/server.ts
+
+set cronjob running a task every first minute
+🚀 Server running on port 2542!
+Database connection was refused.
+query trouble
+AggregateError:
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1714:7)
+    --------------------
+    at Protocol._enqueue (D:\Rakpod\rakpod-subscriber-service\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (D:\Rakpod\rakpod-subscriber-service\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (D:\Rakpod\rakpod-subscriber-service\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (D:\Rakpod\rakpod-subscriber-service\node_modules\mysql\lib\Pool.js:48:16)
+    at Pool.query (D:\Rakpod\rakpod-subscriber-service\node_modules\mysql\lib\Pool.js:202:8)
+    at D:\Rakpod\rakpod-subscriber-service\src\db\db.connection.ts:53:15
+    at new Promise (<anonymous>)
+    at query (D:\Rakpod\rakpod-subscriber-service\src\db\db.connection.ts:44:12)
+    at WeatherStationModel.find (D:\Rakpod\rakpod-subscriber-service\src\models\weatherStation.model.ts:18:22)
+    at WeatherStationController.getAllWeatherStationMQTT (D:\Rakpod\rakpod-subscriber-service\src\controllers\weatherStation.controller.ts:309:55) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1677:14)
+        at afterConnectMultiple (node:net:1707:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1677:14)
+        at afterConnectMultiple (node:net:1707:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}

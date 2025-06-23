@@ -1,0 +1,50 @@
+rakpod-api-service
+ทำงานได้ตรามปกติแต่่ขั้น  mqtt connect fail รั่วๆ
+
+> subscriber-service@1.0.0 start
+> ts-node src/server.ts
+
+check status of weather station
+set cronjob running a task every 4 minute
+Socket.IO initialized in StoreDataController
+Server is running on port 2541
+Database connection was refused.
+AggregateError:
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1714:7)
+    --------------------
+    at Protocol._enqueue (D:\Rakpod\rakpod-api-service\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (D:\Rakpod\rakpod-api-service\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (D:\Rakpod\rakpod-api-service\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (D:\Rakpod\rakpod-api-service\node_modules\mysql\lib\Pool.js:48:16)
+    at Pool.query (D:\Rakpod\rakpod-api-service\node_modules\mysql\lib\Pool.js:202:8)
+    at D:\Rakpod\rakpod-api-service\src\db\db.connection.ts:53:15
+    at new Promise (<anonymous>)
+    at DBConnection.query (D:\Rakpod\rakpod-api-service\src\db\db.connection.ts:44:12)
+    at WeatherStationModel.find (D:\Rakpod\rakpod-api-service\src\models\weatherStation.model.ts:11:26)
+    at StoreDataController.checkStatusOfWeatherStation (D:\Rakpod\rakpod-api-service\src\controllers\storeData.controller.ts:215:59) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1677:14)
+        at afterConnectMultiple (node:net:1707:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1677:14)
+        at afterConnectMultiple (node:net:1707:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+Mqtt connection fail
+Database connection was refused.

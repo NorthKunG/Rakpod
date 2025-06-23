@@ -1,0 +1,9 @@
+.card-home {
+  @apply absolute z-[1001] bg-gray-100 text-center p-2 rounded-lg;
+  @apply iphoneSE:right-1/2 transform translate-x-1/2 top-1 iphoneSE:top-1 ipad:right-2 ipad:top-1 w-[234px] h-[520px];
+}
+
+.card-map {
+  @apply absolute z-[1001] bg-gray-100 text-center p-2 rounded-lg;
+  @apply iphoneSE:top-1/2 transform -translate-y-1/2 right-1/2 transform translate-x-1/2 ipad:left-1/4 transform -translate-x-1/2 top-[50%] ipad:top-[50%] w-[234px] h-[520px];
+}

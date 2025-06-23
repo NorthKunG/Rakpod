@@ -1,0 +1,644 @@
+<h1>Smart Environment For Kamphaeng Phet Station</h1>
+
+<p><code>api</code> can access data service that used in <code>envy.adcm.co.th</code>. in this document will represent only for Kamphaeng phet station (stationid=2eaebab9-aa6b-11ec-8305-0242ac120002).</p>
+<ul>
+<li>WEBSITE Domain    : <code>https://envy.adcm.co.th/</code></li>
+<li>API Domain        : <code>https://api-envy.adcm.co.th/</code></li>
+</ul>
+<hr>
+<p>all data for this station begin from <code>2022-04-08</code> to <code>present</code> 
+using station uuid : <code>2eaebab9-aa6b-11ec-8305-0242ac120002</code></p>
+<hr>
+<p><code>GET</code> - <code>https://api-envy.adcm.co.th/weather-station/id/:station_uuid</code></p>
+<p>for get AQI with weather-station in current datetime </p>
+<p>EXAMPLE : <code>https://api-envy.adcm.co.th/weather-station/id/2eaebab9-aa6b-11ec-8305-0242ac120002</code></p>
+<p>RESPONSE : </p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;success&quot;,
+  &quot;status&quot;: 200,
+  &quot;massage&quot;: &quot;Weather Station Detail&quot;,
+  &quot;data&quot;: {
+    &quot;stationid&quot;: &quot;2eaebab9-aa6b-11ec-8305-0242ac120002&quot;,
+    &quot;name&quot;: &quot;มหาวิทยาลัยราชภัฏกำแพงเพชร&quot;,
+    &quot;description&quot;: &quot;มหาวิทยาลัยราชภัฏกำแพงเพชร&quot;,
+    &quot;sensor&quot;: [
+      &quot;PM10&quot;,
+      &quot;PM25&quot;,
+      &quot;CO&quot;,
+      &quot;CO2&quot;,
+      &quot;UV&quot;,
+      &quot;hum&quot;,
+      &quot;light&quot;,
+      &quot;temp&quot;,
+      &quot;windDr&quot;,
+      &quot;windSp&quot;
+    ],
+    &quot;latitude&quot;: 16.48307228,
+    &quot;longitude&quot;: 99.55804443,
+    &quot;addressDetail&quot;: &quot;69 หมู่ 1&quot;,
+    &quot;addressSubDistrict&quot;: &quot;นครชุม&quot;,
+    &quot;addressDistrict&quot;: &quot;เมือง&quot;,
+    &quot;addressProvince&quot;: &quot;กำแพงเพชร&quot;,
+    &quot;status&quot;: &quot;offline&quot;,
+    &quot;environmentInformation&quot;: {
+      &quot;datetime&quot;: &quot;2023-05-08 10:00:00&quot;,
+      &quot;temp&quot;: null,
+      &quot;hum&quot;: null,
+      &quot;PM1&quot;: null,
+      &quot;PM25&quot;: 15.6,
+      &quot;PM10&quot;: 21.47,
+      &quot;O3&quot;: null,
+      &quot;CO&quot;: null,
+      &quot;SO2&quot;: null,
+      &quot;NO2&quot;: null,
+      &quot;CO2&quot;: null,
+      &quot;windDr&quot;: null,
+      &quot;windSp&quot;: null,
+      &quot;rain&quot;: null,
+      &quot;light&quot;: null,
+      &quot;UV&quot;: null,
+      &quot;aqi&quot;: {
+        &quot;PM25&quot;: {
+          &quot;index&quot;: 16,
+          &quot;value&quot;: 15.6
+        },
+        &quot;PM10&quot;: {
+          &quot;index&quot;: 11,
+          &quot;value&quot;: 21.47
+        },
+        &quot;O3&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;CO&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;NO2&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;SO2&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;AQI&quot;: {
+          &quot;Level&quot;: 1,
+          &quot;aqi&quot;: 16
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<hr>
+<p><code>GET</code> - <code>api-envy.adcm.co.th/environment/weather-station/</code></p>
+<p>for get history of environment in given weather-station</p>
+<h3 id="environment-api--method-get-only-">Environment API ** Method GET ONLY **</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Query params</th>
+<th align="left">type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">stationid</td>
+<td align="left">uuid</td>
+</tr>
+<tr>
+<td align="left">date</td>
+<td align="left">date (&quot;YYYY-MM-DD&quot;)</td>
+</tr>
+<tr>
+<td align="left">last</td>
+<td align="left">number &gt; 0</td>
+</tr>
+<tr>
+<td align="left">lastType</td>
+<td align="left">enum(&#39;days&#39;,&#39;months&#39;)</td>
+</tr>
+</tbody></table>
+<p>EXAMPLE : <code>api-envy.adcm.co.th/environment/weather-station/</code></p>
+<p>RESPONSE : </p>
+<pre><code class="language-json">{
+  &quot;errors&quot;: [
+    {
+      &quot;msg&quot;: &quot;station id required and not empty&quot;,
+      &quot;param&quot;: &quot;stationid&quot;,
+      &quot;location&quot;: &quot;query&quot;
+    },
+    {
+      &quot;msg&quot;: &quot;Invalid value(s)&quot;,
+      &quot;param&quot;: &quot;_error&quot;,
+      &quot;nestedErrors&quot;: [
+        {
+          &quot;msg&quot;: &quot;Invalid value&quot;,
+          &quot;param&quot;: &quot;date&quot;,
+          &quot;location&quot;: &quot;query&quot;
+        },
+        {
+          &quot;msg&quot;: &quot;date is require format YYYY-MM-DD&quot;,
+          &quot;param&quot;: &quot;date&quot;,
+          &quot;location&quot;: &quot;query&quot;
+        },
+        {
+          &quot;msg&quot;: &quot;Invalid value&quot;,
+          &quot;param&quot;: &quot;last&quot;,
+          &quot;location&quot;: &quot;query&quot;
+        },
+        {
+          &quot;msg&quot;: &quot;last is require and type number more than 0 and not empty&quot;,
+          &quot;param&quot;: &quot;last&quot;,
+          &quot;location&quot;: &quot;query&quot;
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<p>THIS RESPONSE WILL SHOW THE MISSING VALUE IN QUERY PARAM</p>
+<hr>
+<p>IN TERM TO USE THIS API <code>api-envy.adcm.co.th/environment/weather-station/</code> YOU NEED TO GIVE THE QUERYPARAM require <code>stationid</code> by default</p>
+<p>AND OTHER QUERY PARAM BETWEEN <code>date</code> AND <code>last</code> </p>
+<p><code>GET</code> - <code>api-envy.adcm.co.th/environment/weather-station/?stationid=${station_uuid&amp;date={date in YYYY-MM-DD}</code></p>
+<p>for get history of environment in given weather-station in hourly in given date</p>
+<p>EXAMPLE : <code>api-envy.adcm.co.th/environment/weather-station/?stationid=2eaebab9-aa6b-11ec-8305-0242ac120002&amp;date=2023-05-05</code></p>
+<p>RESPONSE : </p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;success&quot;,
+  &quot;parameters&quot;: {
+    &quot;stationid&quot;: &quot;2eaebab9-aa6b-11ec-8305-0242ac120002&quot;,
+    &quot;date&quot;: &quot;2023-05-03&quot;
+  },
+  &quot;status&quot;: 200,
+  &quot;massage&quot;: &quot;All Environment Custom type&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;datetime&quot;: &quot;2023-05-03 00:00:00&quot;,
+      &quot;temp&quot;: null,
+      &quot;hum&quot;: null,
+      &quot;PM1&quot;: null,
+      &quot;PM25&quot;: null,
+      &quot;PM10&quot;: null,
+      &quot;O3&quot;: null,
+      &quot;CO&quot;: null,
+      &quot;SO2&quot;: null,
+      &quot;NO2&quot;: null,
+      &quot;CO2&quot;: null,
+      &quot;windDr&quot;: null,
+      &quot;windSp&quot;: null,
+      &quot;rain&quot;: null,
+      &quot;light&quot;: null,
+      &quot;UV&quot;: null,
+      &quot;aqi&quot;: {
+        &quot;PM25&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;PM10&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;O3&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;CO&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;NO2&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;SO2&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;AQI&quot;: {
+          &quot;Level&quot;: null,
+          &quot;aqi&quot;: null
+        }
+      }
+    },
+    ................................................
+        {
+      &quot;datetime&quot;: &quot;2023-05-03 14:00:00&quot;,
+      &quot;temp&quot;: 46.08,
+      &quot;hum&quot;: 21.28,
+      &quot;PM1&quot;: null,
+      &quot;PM25&quot;: 18,
+      &quot;PM10&quot;: 24.69,
+      &quot;O3&quot;: null,
+      &quot;CO&quot;: 0,
+      &quot;SO2&quot;: null,
+      &quot;NO2&quot;: null,
+      &quot;CO2&quot;: 473.69,
+      &quot;windDr&quot;: 241,
+      &quot;windSp&quot;: 3,
+      &quot;rain&quot;: null,
+      &quot;light&quot;: 53333,
+      &quot;UV&quot;: 0,
+      &quot;aqi&quot;: {
+        &quot;PM25&quot;: {
+          &quot;index&quot;: 18,
+          &quot;value&quot;: 18
+        },
+        &quot;PM10&quot;: {
+          &quot;index&quot;: 12,
+          &quot;value&quot;: 24.69
+        },
+        &quot;O3&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;CO&quot;: {
+          &quot;index&quot;: 0,
+          &quot;value&quot;: 0
+        },
+        &quot;NO2&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;SO2&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;AQI&quot;: {
+          &quot;Level&quot;: 1,
+          &quot;aqi&quot;: 18
+        }
+      }
+    },
+    .....................................................
+</code></pre>
+<p><code>GET</code> - <code>api-envy.adcm.co.th/environment/weather-station/?stationid=${station_uuid&amp;last={number of previous data}&amp;lastType=${type of previous data [&#39;days&#39;,&#39;months&#39;]}</code></p>
+<p>for get history of environment in given weather-station in previous <code>?? days</code> or <code>?? months</code> in daily data</p>
+<p>EXAMPLE : <code>api-envy.adcm.co.th/environment/weather-station/?stationid=2eaebab9-aa6b-11ec-8305-0242ac120002&amp;last=2&amp;lastType=days</code></p>
+<p>RESPONSE : </p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;success&quot;,
+  &quot;parameters&quot;: {
+    &quot;stationid&quot;: &quot;2eaebab9-aa6b-11ec-8305-0242ac120002&quot;,
+    &quot;last&quot;: &quot;2&quot;,
+    &quot;lasttype&quot;: &quot;days&quot;
+  },
+  &quot;status&quot;: 200,
+  &quot;massage&quot;: &quot;All Environment Custom type&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;datetime&quot;: &quot;2023-05-06&quot;,
+      &quot;temp&quot;: 48.32,
+      &quot;hum&quot;: 18.32,
+      &quot;PM1&quot;: null,
+      &quot;PM25&quot;: 16.77,
+      &quot;PM10&quot;: 22.97,
+      &quot;O3&quot;: null,
+      &quot;CO&quot;: 0,
+      &quot;SO2&quot;: null,
+      &quot;NO2&quot;: null,
+      &quot;CO2&quot;: 500.71,
+      &quot;windDr&quot;: 103,
+      &quot;windSp&quot;: 17,
+      &quot;rain&quot;: null,
+      &quot;light&quot;: 32546,
+      &quot;UV&quot;: 0,
+      &quot;aqi&quot;: {
+        &quot;PM25&quot;: {
+          &quot;index&quot;: 17,
+          &quot;value&quot;: 16.77
+        },
+        &quot;PM10&quot;: {
+          &quot;index&quot;: 11,
+          &quot;value&quot;: 22.97
+        },
+        &quot;O3&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;CO&quot;: {
+          &quot;index&quot;: 0,
+          &quot;value&quot;: 0
+        },
+        &quot;NO2&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;SO2&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;AQI&quot;: {
+          &quot;Level&quot;: 1,
+          &quot;aqi&quot;: 17
+        }
+      }
+    },
+    {
+      &quot;datetime&quot;: &quot;2023-05-07&quot;,
+      &quot;temp&quot;: 45.85,
+      &quot;hum&quot;: 21.03,
+      &quot;PM1&quot;: null,
+      &quot;PM25&quot;: 15.45,
+      &quot;PM10&quot;: 21.24,
+      &quot;O3&quot;: null,
+      &quot;CO&quot;: 0,
+      &quot;SO2&quot;: null,
+      &quot;NO2&quot;: null,
+      &quot;CO2&quot;: 476.03,
+      &quot;windDr&quot;: 58,
+      &quot;windSp&quot;: 79,
+      &quot;rain&quot;: null,
+      &quot;light&quot;: 38696,
+      &quot;UV&quot;: 0,
+      &quot;aqi&quot;: {
+        &quot;PM25&quot;: {
+          &quot;index&quot;: 15,
+          &quot;value&quot;: 15.45
+        },
+        &quot;PM10&quot;: {
+          &quot;index&quot;: 11,
+          &quot;value&quot;: 21.24
+        },
+        &quot;O3&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;CO&quot;: {
+          &quot;index&quot;: 0,
+          &quot;value&quot;: 0
+        },
+        &quot;NO2&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;SO2&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;AQI&quot;: {
+          &quot;Level&quot;: 1,
+          &quot;aqi&quot;: 15
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+<p>EXAMPLE : <code>api-envy.adcm.co.th/environment/weather-station/?stationid=2eaebab9-aa6b-11ec-8305-0242ac120002&amp;last=1&amp;lastType=months</code></p>
+<p>RESPONSE : </p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;success&quot;,
+  &quot;parameters&quot;: {
+    &quot;stationid&quot;: &quot;2eaebab9-aa6b-11ec-8305-0242ac120002&quot;,
+    &quot;last&quot;: &quot;1&quot;,
+    &quot;lasttype&quot;: &quot;months&quot;
+  },
+  &quot;status&quot;: 200,
+  &quot;massage&quot;: &quot;All Environment Custom type&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;datetime&quot;: &quot;2023-04-01&quot;,
+      &quot;temp&quot;: null,
+      &quot;hum&quot;: null,
+      &quot;PM1&quot;: null,
+      &quot;PM25&quot;: null,
+      &quot;PM10&quot;: null,
+      &quot;O3&quot;: null,
+      &quot;CO&quot;: null,
+      &quot;SO2&quot;: null,
+      &quot;NO2&quot;: null,
+      &quot;CO2&quot;: null,
+      &quot;windDr&quot;: null,
+      &quot;windSp&quot;: null,
+      &quot;rain&quot;: null,
+      &quot;light&quot;: null,
+      &quot;UV&quot;: null,
+      &quot;aqi&quot;: {
+        &quot;PM25&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;PM10&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;O3&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;CO&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;NO2&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;SO2&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;AQI&quot;: {
+          &quot;Level&quot;: null,
+          &quot;aqi&quot;: null
+        }
+      }
+    },
+    ......................................
+        {
+      &quot;datetime&quot;: &quot;2023-04-30&quot;,
+      &quot;temp&quot;: null,
+      &quot;hum&quot;: null,
+      &quot;PM1&quot;: null,
+      &quot;PM25&quot;: null,
+      &quot;PM10&quot;: null,
+      &quot;O3&quot;: null,
+      &quot;CO&quot;: null,
+      &quot;SO2&quot;: null,
+      &quot;NO2&quot;: null,
+      &quot;CO2&quot;: null,
+      &quot;windDr&quot;: null,
+      &quot;windSp&quot;: null,
+      &quot;rain&quot;: null,
+      &quot;light&quot;: null,
+      &quot;UV&quot;: null,
+      &quot;aqi&quot;: {
+        &quot;PM25&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;PM10&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;O3&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;CO&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;NO2&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;SO2&quot;: {
+          &quot;index&quot;: null,
+          &quot;value&quot;: null
+        },
+        &quot;AQI&quot;: {
+          &quot;Level&quot;: null,
+          &quot;aqi&quot;: null
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+<hr>
+<h2>PARAMETER DESCRIPTION</h2>
+
+
+<h3 id="weather-station-parameter">Weather Station Parameter</h3>
+<table>
+<thead>
+<tr>
+<th align="left">parameter</th>
+<th align="center">example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">stationid</td>
+<td align="center">uuid</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="center">Borirak Station</td>
+</tr>
+<tr>
+<td align="left">description</td>
+<td align="center">for test only</td>
+</tr>
+<tr>
+<td align="left">sensor</td>
+<td align="center">PM1,PM25,PM10</td>
+</tr>
+<tr>
+<td align="left">latitude</td>
+<td align="center">16.74546432</td>
+</tr>
+<tr>
+<td align="left">longitude</td>
+<td align="center">100.19811249</td>
+</tr>
+<tr>
+<td align="left">addressDetail</td>
+<td align="center">&quot;-&quot;</td>
+</tr>
+<tr>
+<td align="left">addressSubDistrict</td>
+<td align="center">ท่าโพธิ์</td>
+</tr>
+<tr>
+<td align="left">addressDistrict</td>
+<td align="center">เมือง</td>
+</tr>
+<tr>
+<td align="left">addressProvince</td>
+<td align="center">พิษณุโลก</td>
+</tr>
+<tr>
+<td align="left">status</td>
+<td align="center">&#39;online&#39;,&#39;offline&#39;</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="environment-data-parameter">Environment data Parameter</h3>
+<table>
+<thead>
+<tr>
+<th align="left">parameter</th>
+<th align="left">meaning</th>
+<th align="right">unit</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">temp</td>
+<td align="left">Temperature</td>
+<td align="right">°C</td>
+</tr>
+<tr>
+<td align="left">hum</td>
+<td align="left">Humidity</td>
+<td align="right">%</td>
+</tr>
+<tr>
+<td align="left">PM1</td>
+<td align="left">Particulate matter &lt;= 1 μm</td>
+<td align="right">µg/m³</td>
+</tr>
+<tr>
+<td align="left">PM25</td>
+<td align="left">Particulate matter &lt;= 2.5 μm</td>
+<td align="right">µg/m³</td>
+</tr>
+<tr>
+<td align="left">PM10</td>
+<td align="left">Particulate matter &lt;= 10 μm</td>
+<td align="right">µg/m³</td>
+</tr>
+<tr>
+<td align="left">O3</td>
+<td align="left">Ozone</td>
+<td align="right">ppb</td>
+</tr>
+<tr>
+<td align="left">CO</td>
+<td align="left">Carbon Monoxide</td>
+<td align="right">ppm</td>
+</tr>
+<tr>
+<td align="left">NO2</td>
+<td align="left">Nitrogen Dioxide</td>
+<td align="right">ppb</td>
+</tr>
+<tr>
+<td align="left">SO2</td>
+<td align="left">Sulfur Dioxide</td>
+<td align="right">ppb</td>
+</tr>
+<tr>
+<td align="left">CO2</td>
+<td align="left">Carbon Dioxide</td>
+<td align="right">ppm</td>
+</tr>
+<tr>
+<td align="left">windDr</td>
+<td align="left">Wind Direction</td>
+<td align="right">degree</td>
+</tr>
+<tr>
+<td align="left">windSp</td>
+<td align="left">Wind Speed</td>
+<td align="right">km/h</td>
+</tr>
+<tr>
+<td align="left">rain</td>
+<td align="left">Rain Volume per day</td>
+<td align="right">mm</td>
+</tr>
+<tr>
+<td align="left">light</td>
+<td align="left">Light</td>
+<td align="right">lux</td>
+</tr>
+<tr>
+<td align="left">UV</td>
+<td align="left">Ultraviolet</td>
+<td align="right">W/m²</td>
+</tr>
+</tbody></table>
+<hr>

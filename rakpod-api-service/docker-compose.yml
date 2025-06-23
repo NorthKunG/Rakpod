@@ -1,0 +1,9 @@
+services:
+  app:
+    container_name: "rakpod-subscriber"
+    restart: always
+    build: .
+    ports:
+      - "2541:2541"
+    environment:
+      - TZ=Asia/Bangkok

@@ -1,0 +1,24 @@
+.custom-popup .leaflet-popup-content-wrapper {
+  border-radius: 0px;
+  @apply bg-red-500;
+}
+.custom-popup .leaflet-popup-tip-container {
+  @apply opacity-0;
+}
+
+.circle-red {
+  @apply bg-[#E64848] rounded-full text-center border-4 border-[#C21010]
+}
+.circle-green {
+  @apply bg-[#82CD47] rounded-full text-center border-4 border-[#379237]
+}
+.circle-blue {
+  @apply bg-[##47B5FF] rounded-full text-center border-4 border-[#256D85]
+}
+.circle-orange {
+  @apply bg-orange-[#FD841F] rounded-full text-center border-4 border-[#E14D2A]
+}
+.circle-yellow {
+  @apply bg-[#FFEA11] rounded-full text-center border-4 border-[#FFC900]
+}
+

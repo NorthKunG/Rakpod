@@ -1,0 +1,32 @@
+{
+  "name": "subscriber-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.ts",
+  "scripts": {
+    "start": "ts-node src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon --exec ts-node src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/mysql": "^2.15.21",
+    "@types/node-cron": "^3.0.1",
+    "axios": "^0.26.1",
+    "express": "^5.1.0",
+    "moment": "^2.29.1",
+    "mqtt": "^4.3.6",
+    "mysql": "^2.18.1",
+    "node-cron": "^3.0.0",
+    "nodemon": "^3.1.10",
+    "querystring": "^0.2.1",
+    "socket.io": "^4.8.1",
+    "ts-node": "^10.7.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1"
+  }
+}

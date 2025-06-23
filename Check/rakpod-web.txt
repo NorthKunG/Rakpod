@@ -1,0 +1,290 @@
+rakpod-web
+ทำงานได้ตามปกติแต่ขึ้น error แบบนี้
+Uncaught runtime errors:
+
+ERROR
+Network Error
+    at createError (http://localhost:3000/static/js/bundle.js:47294:15)
+    at XMLHttpRequest.handleError (http://localhost:3000/static/js/bundle.js:46729:14)
+
+D:\Rakpod\rakpod-web>npm run start
+
+> smart_environment_react@0.1.0 start
+> react-scripts start
+
+Browserslist: caniuse-lite is outdated. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+(node:18652) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:18652) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+One of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it may break at any time.
+
+babel-preset-react-app is part of the create-react-app project, which
+is not maintianed anymore. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.
+
+
+🌼   daisyUI 4.12.10
+├─ ✔︎ 2 themes added            https://daisyui.com/docs/themes
+╰─ ❤︎ Support daisyUI project:  https://opencollective.com/daisyui
+Compiled with warnings.
+
+[eslint]
+src\components\BarChart.tsx
+  Line 1:42:   'useRef' is defined but never used         @typescript-eslint/no-unused-vars
+  Line 14:8:   'axios' is defined but never used          @typescript-eslint/no-unused-vars
+  Line 15:10:  'Unit' is defined but never used           @typescript-eslint/no-unused-vars
+  Line 156:7:  'data' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src\components\CardInfo.tsx
+  Line 8:9:   'Label' is assigned a value but never used                                                                 @typescript-eslint/no-unused-vars
+  Line 49:9:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+  Line 54:9:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+  Line 59:9:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+  Line 64:9:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+  Line 69:9:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+
+src\components\CardRanking\CardRanking.tsx
+  Line 8:10:  'GetDataFromAPI' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 16:7:  'order' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src\components\CardRanking\CardRankingPSL.tsx
+  Line 8:10:  'GetDataFromAPI' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 17:7:  'order' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src\components\Footer.tsx
+  Line 1:8:   'logo' is defined but never used       @typescript-eslint/no-unused-vars
+  Line 5:8:   'cmlogo' is defined but never used     @typescript-eslint/no-unused-vars
+  Line 6:8:   'rplogo' is defined but never used     @typescript-eslint/no-unused-vars
+  Line 7:8:   'ieaotlogo' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 12:8:  'purple' is defined but never used     @typescript-eslint/no-unused-vars
+
+src\components\LineCompareChart.tsx
+  Line 14:8:  'faker' is defined but never used  @typescript-eslint/no-unused-vars
+
+src\components\Navbar.tsx
+  Line 1:8:     'axios' is defined but never used                                                                          @typescript-eslint/no-unused-vars
+  Line 7:8:     'bell' is defined but never used                                                                           @typescript-eslint/no-unused-vars
+  Line 182:40:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+  Line 191:40:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+
+src\components\NewCardDeviceDetails\NewCardDeviceDetails.tsx
+  Line 10:8:    'purple' is defined but never used   @typescript-eslint/no-unused-vars
+  Line 12:10:   'da' is defined but never used       @typescript-eslint/no-unused-vars
+  Line 89:38:   Expected '===' and instead saw '=='  eqeqeq
+  Line 423:24:  Expected '===' and instead saw '=='  eqeqeq
+  Line 644:20:  Expected '===' and instead saw '=='  eqeqeq
+
+src\components\RealtimeGraph.tsx
+  Line 1:17:  'useState' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 41:9:  'connectSocketIO' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src\components\SensorDetails\SensorDetails.tsx
+  Line 1:17:  'useEffect' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 1:28:  'useState' is defined but never used                   @typescript-eslint/no-unused-vars
+  Line 3:8:   'BarGraph' is defined but never used                   @typescript-eslint/no-unused-vars
+  Line 7:7:   'SENSOR_LABEL' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  Line 25:7:  'ColorGraphSensor' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src\components\TableComp.tsx
+  Line 20:10:  'da' is defined but never used                                                                                                                                                 @typescript-eslint/no-unused-vars
+  Line 96:10:  'type' is assigned a value but never used                                                                                                                                      @typescript-eslint/no-unused-vars
+  Line 99:7:   'numberDays' is assigned a value but never used                                                                                                                                @typescript-eslint/no-unused-vars
+  Line 240:6:  React Hook React.useEffect has missing dependencies: 'deviceId', 'fetchDataFromApiToday', and 'fetchDataFromApiYesterday'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 257:4:  React Hook useEffect has missing dependencies: 'deviceId', 'fetchDataFromApiselectday', and 'value'. Either include them or remove the dependency array                        react-hooks/exhaustive-deps
+
+src\pages\DeviceDetails\Devicedetails.tsx
+  Line 24:8:   'axios' is defined but never used                                                                              @typescript-eslint/no-unused-vars
+  Line 24:17:  'AxiosResponse' is defined but never used                                                                      @typescript-eslint/no-unused-vars
+  Line 32:8:   'dayjs' is defined but never used                                                                              @typescript-eslint/no-unused-vars
+  Line 33:8:   'Excelexport' is defined but never used                                                                        @typescript-eslint/no-unused-vars
+  Line 34:8:   'BarChart' is defined but never used                                                                           @typescript-eslint/no-unused-vars
+  Line 35:8:   'handleExportChartToImage' is defined but never used                                                           @typescript-eslint/no-unused-vars
+  Line 53:7:   'sampleDataSensor' is assigned a value but never used                                                          @typescript-eslint/no-unused-vars
+  Line 77:10:  'dataDevice' is assigned a value but never used                                                                @typescript-eslint/no-unused-vars
+  Line 77:22:  'setDataDevice' is assigned a value but never used                                                             @typescript-eslint/no-unused-vars
+  Line 78:10:  'devicesData' is assigned a value but never used                                                               @typescript-eslint/no-unused-vars
+  Line 78:23:  'setDevicesData' is assigned a value but never used                                                            @typescript-eslint/no-unused-vars
+  Line 121:5:  Nested block is redundant                                                                                      no-lone-blocks
+  Line 126:6:  React Hook useEffect has a missing dependency: 'date_graph'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src\pages\ExportData\ExportData.tsx
+  Line 233:6:  React Hook useEffect has missing dependencies: 'month', 'selectTypeRange', and 'setqueryType'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+src\pages\Homepagetest\Homepagetest.tsx
+  Line 83:6:  React Hook useEffect has a missing dependency: 'getDataFromNewAPI'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src\pages\Map\Map.tsx
+  Line 10:8:   'axios' is defined but never used                          @typescript-eslint/no-unused-vars
+  Line 57:10:  'CurrentLocation' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 57:27:  'setCurrentLocation' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  Line 60:10:  'selectedDeviceString' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 62:9:   'navigate' is assigned a value but never used              @typescript-eslint/no-unused-vars
+  Line 63:7:   'tempGirls' is assigned a value but never used             @typescript-eslint/no-unused-vars
+  Line 65:10:  'inputText' is assigned a value but never used             @typescript-eslint/no-unused-vars
+  Line 66:7:   'inputHandler' is assigned a value but never used          @typescript-eslint/no-unused-vars
+
+src\pages\Map\MapPSL.tsx
+  Line 10:8:   'axios' is defined but never used                          @typescript-eslint/no-unused-vars
+  Line 60:10:  'CurrentLocation' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 63:10:  'selectedDeviceString' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 65:9:   'navigate' is assigned a value but never used              @typescript-eslint/no-unused-vars
+  Line 66:7:   'tempGirls' is assigned a value but never used             @typescript-eslint/no-unused-vars
+  Line 68:10:  'inputText' is assigned a value but never used             @typescript-eslint/no-unused-vars
+  Line 69:7:   'inputHandler' is assigned a value but never used          @typescript-eslint/no-unused-vars
+
+src\pages\Place\Place.tsx
+  Line 3:8:   'axios' is defined but never used                                                                           @typescript-eslint/no-unused-vars
+  Line 3:17:  'AxiosResponse' is defined but never used                                                                   @typescript-eslint/no-unused-vars
+  Line 79:6:  React Hook useEffect has a missing dependency: 'sensors'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+assets by path static/media/*.svg 1.11 MiB
+  asset static/media/psllogo.b178884041dec7735c99f32700dd7a81.svg 365 KiB [emitted] (auxiliary name: main)
+  asset static/media/linelogo.0e89a7e194ab43f3eaa4f2780c585639.svg 210 KiB [emitted] (auxiliary name: main)
+  asset static/media/podlogo.481349d3e165dcc9751a56a830ebc036.svg 160 KiB [emitted] (auxiliary name: main)
+  asset static/media/rakpod.55c09e6ffeadfeee5ffb56c33aef6c0d.svg 109 KiB [emitted] (auxiliary name: main)
+  asset static/media/red.b303497d332c6bfb82b919573a172269.svg 71.1 KiB [emitted] (auxiliary name: main)
+  asset static/media/blue.9229dd5675a195fe95cfc18d963461dd.svg 58 KiB [emitted] (auxiliary name: main)
+  asset static/media/orange.15084efeda3043efab5ab7e382a00c00.svg 57.9 KiB [emitted] (auxiliary name: main)
+  + 7 assets
+assets by path static/js/*.js 11 MiB
+  asset static/js/bundle.js 11 MiB [emitted] (name: main) 1 related asset
+  asset static/js/node_modules_web-vitals_dist_web-vitals_js.chunk.js 7.25 KiB [emitted] 1 related asset
+asset static/media/huangpodlogo.1c48917b7d454d8d78c5.png 42.6 KiB [emitted] [immutable] [from: src/huangpodlogo.png] (auxiliary name: main)
+asset asset-manifest.json 1.82 KiB [emitted]
+asset index.html 1.15 KiB [emitted]
+orphan modules 1.52 MiB [orphan] 815 modules
+runtime modules 32.9 KiB 18 modules
+modules by path ./node_modules/ 7.75 MiB 2130 modules
+modules by path ./src/ 1.63 MiB (javascript) 42.6 KiB (asset) 50 modules
+modules by mime type image/svg+xml 1.23 KiB
+  data:image/svg+xml,%3csvg width=%27.. 201 bytes [built] [code generated]
+  data:image/svg+xml,%3csvg width=%27.. 201 bytes [built] [code generated]
+  data:image/svg+xml,%3Csvg width=%27.. 863 bytes [built] [code generated]
+fs (ignored) 15 bytes [built] [code generated]
+crypto (ignored) 15 bytes [optional] [built] [code generated]
+stream (ignored) 15 bytes [built] [code generated]
+
+WARNING in [eslint]
+src\components\BarChart.tsx
+  Line 1:42:   'useRef' is defined but never used         @typescript-eslint/no-unused-vars
+  Line 14:8:   'axios' is defined but never used          @typescript-eslint/no-unused-vars
+  Line 15:10:  'Unit' is defined but never used           @typescript-eslint/no-unused-vars
+  Line 156:7:  'data' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src\components\CardInfo.tsx
+  Line 8:9:   'Label' is assigned a value but never used                                                                 @typescript-eslint/no-unused-vars
+  Line 49:9:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+  Line 54:9:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+  Line 59:9:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+  Line 64:9:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+  Line 69:9:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+
+src\components\CardRanking\CardRanking.tsx
+  Line 8:10:  'GetDataFromAPI' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 16:7:  'order' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src\components\CardRanking\CardRankingPSL.tsx
+  Line 8:10:  'GetDataFromAPI' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 17:7:  'order' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src\components\Footer.tsx
+  Line 1:8:   'logo' is defined but never used       @typescript-eslint/no-unused-vars
+  Line 5:8:   'cmlogo' is defined but never used     @typescript-eslint/no-unused-vars
+  Line 6:8:   'rplogo' is defined but never used     @typescript-eslint/no-unused-vars
+  Line 7:8:   'ieaotlogo' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 12:8:  'purple' is defined but never used     @typescript-eslint/no-unused-vars
+
+src\components\LineCompareChart.tsx
+  Line 14:8:  'faker' is defined but never used  @typescript-eslint/no-unused-vars
+
+src\components\Navbar.tsx
+  Line 1:8:     'axios' is defined but never used                                                                          @typescript-eslint/no-unused-vars
+  Line 7:8:     'bell' is defined but never used                                                                           @typescript-eslint/no-unused-vars
+  Line 182:40:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+  Line 191:40:  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text
+
+src\components\NewCardDeviceDetails\NewCardDeviceDetails.tsx
+  Line 10:8:    'purple' is defined but never used   @typescript-eslint/no-unused-vars
+  Line 12:10:   'da' is defined but never used       @typescript-eslint/no-unused-vars
+  Line 89:38:   Expected '===' and instead saw '=='  eqeqeq
+  Line 423:24:  Expected '===' and instead saw '=='  eqeqeq
+  Line 644:20:  Expected '===' and instead saw '=='  eqeqeq
+
+src\components\RealtimeGraph.tsx
+  Line 1:17:  'useState' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 41:9:  'connectSocketIO' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src\components\SensorDetails\SensorDetails.tsx
+  Line 1:17:  'useEffect' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 1:28:  'useState' is defined but never used                   @typescript-eslint/no-unused-vars
+  Line 3:8:   'BarGraph' is defined but never used                   @typescript-eslint/no-unused-vars
+  Line 7:7:   'SENSOR_LABEL' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  Line 25:7:  'ColorGraphSensor' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src\components\TableComp.tsx
+  Line 20:10:  'da' is defined but never used                                                                                                                                                 @typescript-eslint/no-unused-vars
+  Line 96:10:  'type' is assigned a value but never used                                                                                                                                      @typescript-eslint/no-unused-vars
+  Line 99:7:   'numberDays' is assigned a value but never used                                                                                                                                @typescript-eslint/no-unused-vars
+  Line 240:6:  React Hook React.useEffect has missing dependencies: 'deviceId', 'fetchDataFromApiToday', and 'fetchDataFromApiYesterday'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  Line 257:4:  React Hook useEffect has missing dependencies: 'deviceId', 'fetchDataFromApiselectday', and 'value'. Either include them or remove the dependency array                        react-hooks/exhaustive-deps
+
+src\pages\DeviceDetails\Devicedetails.tsx
+  Line 24:8:   'axios' is defined but never used                                                                              @typescript-eslint/no-unused-vars
+  Line 24:17:  'AxiosResponse' is defined but never used                                                                      @typescript-eslint/no-unused-vars
+  Line 32:8:   'dayjs' is defined but never used                                                                              @typescript-eslint/no-unused-vars
+  Line 33:8:   'Excelexport' is defined but never used                                                                        @typescript-eslint/no-unused-vars
+  Line 34:8:   'BarChart' is defined but never used                                                                           @typescript-eslint/no-unused-vars
+  Line 35:8:   'handleExportChartToImage' is defined but never used                                                           @typescript-eslint/no-unused-vars
+  Line 53:7:   'sampleDataSensor' is assigned a value but never used                                                          @typescript-eslint/no-unused-vars
+  Line 77:10:  'dataDevice' is assigned a value but never used                                                                @typescript-eslint/no-unused-vars
+  Line 77:22:  'setDataDevice' is assigned a value but never used                                                             @typescript-eslint/no-unused-vars
+  Line 78:10:  'devicesData' is assigned a value but never used                                                               @typescript-eslint/no-unused-vars
+  Line 78:23:  'setDevicesData' is assigned a value but never used                                                            @typescript-eslint/no-unused-vars
+  Line 121:5:  Nested block is redundant                                                                                      no-lone-blocks
+  Line 126:6:  React Hook useEffect has a missing dependency: 'date_graph'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src\pages\ExportData\ExportData.tsx
+  Line 233:6:  React Hook useEffect has missing dependencies: 'month', 'selectTypeRange', and 'setqueryType'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+src\pages\Homepagetest\Homepagetest.tsx
+  Line 83:6:  React Hook useEffect has a missing dependency: 'getDataFromNewAPI'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src\pages\Map\Map.tsx
+  Line 10:8:   'axios' is defined but never used                          @typescript-eslint/no-unused-vars
+  Line 57:10:  'CurrentLocation' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 57:27:  'setCurrentLocation' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  Line 60:10:  'selectedDeviceString' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 62:9:   'navigate' is assigned a value but never used              @typescript-eslint/no-unused-vars
+  Line 63:7:   'tempGirls' is assigned a value but never used             @typescript-eslint/no-unused-vars
+  Line 65:10:  'inputText' is assigned a value but never used             @typescript-eslint/no-unused-vars
+  Line 66:7:   'inputHandler' is assigned a value but never used          @typescript-eslint/no-unused-vars
+
+src\pages\Map\MapPSL.tsx
+  Line 10:8:   'axios' is defined but never used                          @typescript-eslint/no-unused-vars
+  Line 60:10:  'CurrentLocation' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 63:10:  'selectedDeviceString' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 65:9:   'navigate' is assigned a value but never used              @typescript-eslint/no-unused-vars
+  Line 66:7:   'tempGirls' is assigned a value but never used             @typescript-eslint/no-unused-vars
+  Line 68:10:  'inputText' is assigned a value but never used             @typescript-eslint/no-unused-vars
+  Line 69:7:   'inputHandler' is assigned a value but never used          @typescript-eslint/no-unused-vars
+
+src\pages\Place\Place.tsx
+  Line 3:8:   'axios' is defined but never used                                                                           @typescript-eslint/no-unused-vars
+  Line 3:17:  'AxiosResponse' is defined but never used                                                                   @typescript-eslint/no-unused-vars
+  Line 79:6:  React Hook useEffect has a missing dependency: 'sensors'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack 5.93.0 compiled with 1 warning in 51413 ms
+No issues found.
