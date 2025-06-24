@@ -1,8 +1,10 @@
 # --- Step 1: Build React app ---
-FROM node:16 AS build
+FROM node:18 AS build
 
 WORKDIR /app
 COPY . .
+RUN echo 'nameserver 8.8.8.8' > /etc/resolv.conf \
+    && echo 'nameserver 1.1.1.1' >> /etc/resolv.conf
 RUN npm config set fetch-retry-maxtimeout 600000 \
     && npm config set fetch-timeout 600000
 
