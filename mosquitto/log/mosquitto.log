@@ -1719,3 +1719,15 @@
 1749235621: Client mqttjs_7a0d5f68 closed its connection.
 1749235629: Client mqttjs_c800b606 closed its connection.
 1749235630: mosquitto version 2.0.15 terminating
+1750778313: mosquitto version 2.0.15 starting
+1750778313: Config loaded from /mosquitto/config/mosquitto.conf.
+1750778313: Opening ipv4 listen socket on port 1883.
+1750778313: Opening ipv6 listen socket on port 1883.
+1750778313: mosquitto version 2.0.15 running
+1750778315: New connection from 172.18.0.4:59152 on port 1883.
+1750778315: New client connected from 172.18.0.4:59152 as mqttjs_31c99dd8 (p2, c1, k60, u'adcm').
+1750778324: New connection from 172.18.0.5:38144 on port 1883.
+1750778324: New client connected from 172.18.0.5:38144 as mqttjs_AdcMicrosystems_SmartEnvironment_20202221 (p1, c1, k60, u'adcm').
+1750778328: New connection from 172.18.0.6:49832 on port 1883.
+1750778328: New client connected from 172.18.0.6:49832 as mqttjs_01c0d624 (p1, c1, k60, u'adcm').
+1750778328: Client mqttjs_01c0d624 closed its connection.
