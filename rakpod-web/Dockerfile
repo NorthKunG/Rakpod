@@ -3,6 +3,9 @@ FROM node:16 AS build
 
 WORKDIR /app
 COPY . .
+RUN npm config set fetch-retry-maxtimeout 600000 \
+    && npm config set fetch-timeout 600000
+
 RUN npm install
 RUN npm run build
 

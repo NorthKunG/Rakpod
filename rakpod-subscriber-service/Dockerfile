@@ -4,6 +4,9 @@ RUN ln -fs /usr/share/zoneinfo/Asia/Bangkok /etc/localtime && dpkg-reconfigure -
 WORKDIR /app
 RUN mkdir /app/export_files
 COPY package.json /app
+RUN npm config set fetch-retry-maxtimeout 600000 \
+    && npm config set fetch-timeout 600000
+
 RUN npm install
 COPY . /app
 
