@@ -6,9 +6,8 @@ COPY . .
 RUN npm config set fetch-retry-maxtimeout 600000 \
     && npm config set fetch-timeout 600000
 
-RUN npm install -g npm@latest
+RUN npm install
 
-# RUN npm install
 RUN npm run build
 
 # --- Step 2: Serve build/ with Nginx ---
