@@ -1,25 +1,27 @@
 # --- Step 1: Build React app ---
-# อัปเกรด Node.js เป็น LTS ล่าสุด เช่น node:20 หรือ node:22
 FROM node:20 AS build
 
 WORKDIR /app
 
-# คัดลอกเฉพาะ package.json และ package-lock.json ก่อน
 COPY package.json ./
 # ถ้ามี package-lock.json ด้วย ให้เพิ่มบรรทัดนี้:
 # COPY package-lock.json ./
 
-# ตั้งค่า npm config และล้าง cache
+# **แก้ไขบรรทัดนี้:** ตรวจสอบให้แน่ใจว่า syntax ถูกต้อง
 RUN npm config set fetch-retry-mintimeout 20000 \
     && npm config set fetch-retry-maxtimeout 120000 \
     && npm config set timeout 600000
+    # ไม่มี `:` ต่อท้าย 600000 และ ensure exact phrasing.
+    # ถ้าสงสัย syntax การรวมบรรทัด ลองแยกเป็น 3 RUN commands แทน:
+    # RUN npm config set fetch-retry-mintimeout 20000
+    # RUN npm config set fetch-retry-maxtimeout 120000
+    # RUN npm config set timeout 600000
+
 RUN npm cache clean --force
 
-# รัน npm install ก่อนที่จะคัดลอกไฟล์ทั้งหมด
 RUN npm install
 
-# คัดลอกไฟล์โปรเจกต์ที่เหลือ (ยกเว้น node_modules ที่จะถูก .dockerignore กรองออก)
-COPY . .
+COPY . . # ตรวจสอบให้แน่ใจว่ามี .dockerignore เพื่อละเว้น node_modules
 
 RUN npm run build
 
