@@ -4,7 +4,7 @@ RUN ln -fs /usr/share/zoneinfo/Asia/Bangkok /etc/localtime && dpkg-reconfigure -
 WORKDIR /app
 RUN mkdir /app/export_files
 COPY package.json /app
-RUN npm install
+# RUN npm install
 COPY . /app
 
 CMD ["npm", "start"]
