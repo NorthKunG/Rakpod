@@ -29,6 +29,9 @@ services:
     build: ./rakpod-subscriber-service
     ports:
       - "2542:2542"
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
     environment:
       - TZ=Asia/Bangkok
     env_file:
@@ -47,6 +50,9 @@ services:
     build: ./rakpod-api-service
     ports:
       - "2541:2541"
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
     environment:
       - TZ=Asia/Bangkok
     env_file:
@@ -66,5 +72,8 @@ services:
     build: ./rakpod-web
     ports:
       - "3000:3000"
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
     depends_on:
       - api
