@@ -7,7 +7,6 @@ COPY package.json ./
 
 RUN npm config set fetch-retry-mintimeout 20000
 RUN npm config set fetch-retry-maxtimeout 120000
-RUN npm config set timeout 600000
 
 RUN npm cache clean --force
 
