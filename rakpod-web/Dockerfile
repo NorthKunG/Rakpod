@@ -1,6 +1,6 @@
 # --- Step 1: Build React app ---
 # อัปเกรด Node.js เป็น LTS ล่าสุด เช่น node:20 หรือ node:22
-FROM node:20 AS build # หรือ node:22
+FROM node:20 AS build
 
 WORKDIR /app
 
