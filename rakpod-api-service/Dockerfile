@@ -1,18 +1,13 @@
-# --- Step 1: Build React app ---
-FROM node:20 AS buil
+FROM node:16
+ENV TZ=Asia/Bangkok
+RUN ln -fs /usr/share/zoneinfo/Asia/Bangkok /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 WORKDIR /app
-COPY package.json ./
+COPY package.json /app
 RUN npm config set fetch-retry-mintimeout 20000 \
     && npm config set fetch-retry-maxtimeout 120000 \
     && npm config set timeout 600000
 RUN npm cache clean --force
 RUN npm install
-COPY . .
-RUN npm run build
-# --- Step 2: Serve build/ with Nginx ---
-FROM nginx:alpine
-COPY --from=build /app/build /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY . /app
 
-EXPOSE 3000
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "start"]
