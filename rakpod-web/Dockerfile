@@ -21,7 +21,7 @@ RUN npm cache clean --force
 
 RUN npm install
 
-COPY . . # ตรวจสอบให้แน่ใจว่ามี .dockerignore เพื่อละเว้น node_modules
+COPY . .
 
 RUN npm run build
 
