@@ -4,7 +4,7 @@ import { Line } from "react-chartjs-2";
 import "chartjs-adapter-luxon";
 import StreamingPlugin from "chartjs-plugin-streaming";
 import { io } from "socket.io-client";
-const ENDPOINT = "http://localhost:2541";
+const ENDPOINT = "http://203.150.118.11:2541";
 
 ChartJS.register(StreamingPlugin);
 
