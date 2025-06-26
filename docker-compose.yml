@@ -38,6 +38,7 @@ services:
       - /app/node_modules
       - ./export_files:/app/export_files
       - ./smart-environment-assets:/app/assets
+    restart: unless-stopped
     depends_on:
       - mysql 
       - mosquitto
