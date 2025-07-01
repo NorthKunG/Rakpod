@@ -82,3 +82,29 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+<IfModule mod_headers.c>
+        # อนุญาต Origin ของ Frontend ของคุณ
+        Header set Access-Control-Allow-Origin "https://www.rakpod.adcm.co.th"
+        # อนุญาตเมธอด HTTP ที่ใช้
+        Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+        # อนุญาต Headers ที่ Frontend ส่งมา (เช่น Content-Type, Authorization)
+        Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+        # ถ้า Frontend ส่งข้อมูลรับรอง (เช่น cookies หรือ authorization headers)
+        Header set Access-Control-Allow-Credentials "true"
+
+        # สำหรับ Preflight requests (คำขอ OPTIONS ที่เบราว์เซอร์ส่งมาก่อน)
+        <Limit OPTIONS>
+            Header always set Access-Control-Max-Age "1728000" # ระยะเวลา (เป็นวินาที) ที่เบราว์เซอร์จะ cache ค่า preflight
+            Header always set Content-Type "text/plain charset=UTF-8"
+            Header always set Content-Length "0"
+        </Limit>
+    </IfModule>
+    # **********************************************
+
+    # *** ส่วน ProxyPass ที่ส่งต่อไปยัง Docker Container ของ API ***
+    # ตรวจสอบให้แน่ใจว่าคุณมี ProxyPass สำหรับ API ของคุณอยู่แล้ว
+    # ถ้ายังไม่มี ให้เพิ่ม (ต้องเปิดใช้งาน mod_proxy และ mod_proxy_http)
+    ProxyPass / http://localhost:2542/
+    ProxyPassReverse / http://localhost:2542/
+    # *************************************************************
