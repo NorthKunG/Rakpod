@@ -67,6 +67,9 @@ const time_period: number = !process.env.DATA_TIME_PERIOD_SEC
 
 app.use(morgan("combined"));
 app.use(cors());
+app.use(cors({
+  origin: 'https://www.rakpod.adcm.co.th'
+}));
 // for parsing application/json
 app.use(express.json());
 // for parsing application/x-www-form-urlencoded
