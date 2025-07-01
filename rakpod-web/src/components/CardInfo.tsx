@@ -8,7 +8,7 @@ const CardInfo: React.FC = () => {
   const Label = [
     {
       color: "#47B5FF",
-      text: "ดีมาก",
+      text: "ดีมากกกกกกกกกกกก",
     },
     {
       color: "#82CD47",

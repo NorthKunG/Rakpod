@@ -29,7 +29,7 @@ const CardRanking: React.FC<{
     }
     >
       <h1 className=" text-xl ipad:text-2xl font-bold " >
-        อันดับคุณภาพอากาศ (AQII)
+        อันดับคุณภาพอากาศ (AQI)
       </h1>
       <h2 className="  text-base ipad:text-lg text-gray-500 font-normal leading-10    ">
         อุปกรณ์ที่มีมลพิษทางอากาศสูง (AQI)
