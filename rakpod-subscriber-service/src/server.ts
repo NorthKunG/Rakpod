@@ -67,8 +67,10 @@ const time_period: number = !process.env.DATA_TIME_PERIOD_SEC
 
 app.use(morgan("combined"));
 app.use(cors({
-  origin: 'https://www.rakpod.adcm.co.th',
-  credentials: true,
+  origin: 'https://www.rakpod.adcm.co.th', // โดเมน Frontend ของคุณ
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // เมธอด HTTP ที่อนุญาต
+  allowedHeaders: ['Content-Type', 'Authorization'], // ส่วนหัวคำขอที่อนุญาต
+  credentials: true // หาก Frontend ของคุณส่ง cookies หรือ authorization headers
 }));
 // for parsing application/json
 app.use(express.json());
