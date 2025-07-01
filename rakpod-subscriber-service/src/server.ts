@@ -66,7 +66,6 @@ const time_period: number = !process.env.DATA_TIME_PERIOD_SEC
   : parseInt(process.env.DATA_TIME_PERIOD_SEC); // * insert data every 10 second edit in env
 
 app.use(morgan("combined"));
-app.use(cors());
 app.use(cors({
   origin: 'https://www.rakpod.adcm.co.th'
 }));
