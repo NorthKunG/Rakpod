@@ -66,12 +66,7 @@ const time_period: number = !process.env.DATA_TIME_PERIOD_SEC
   : parseInt(process.env.DATA_TIME_PERIOD_SEC); // * insert data every 10 second edit in env
 
 app.use(morgan("combined"));
-app.use(cors({
-  origin: ['https://www.rakpod.adcm.co.th'], // โดเมน Frontend ของคุณ
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // เมธอด HTTP ที่อนุญาต
-  allowedHeaders: ['Content-Type', 'Authorization'], // ส่วนหัวคำขอที่อนุญาต
-  credentials: true // หาก Frontend ของคุณส่ง cookies หรือ authorization headers
-}));
+app.use(cors());
 // for parsing application/json
 app.use(express.json());
 // for parsing application/x-www-form-urlencoded
