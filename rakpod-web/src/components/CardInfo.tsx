@@ -8,7 +8,7 @@ const CardInfo: React.FC = () => {
   const Label = [
     {
       color: "#47B5FF",
-      text: "ดีมากกกกกกกกกกกก",
+      text: "ดีมาก",
     },
     {
       color: "#82CD47",
@@ -47,7 +47,7 @@ const CardInfo: React.FC = () => {
       <div className="flex items-center gap-4  text-base  ipad:text-xl  font-light ">
         {/* <div className={`bg-[#47B5FF] w-14 h-5 rounded-lg`} /> */}
         <img src={blue} />
-        <p>ดีมาก</p>
+        <p>ดีมากกกกกกกกกก</p>
       </div>
       <div className="flex items-center gap-4  text-base  ipad:text-xl  font-light ">
         {/* <div className={`bg-[#82CD47] w-14 h-5 rounded-lg`} /> */}
