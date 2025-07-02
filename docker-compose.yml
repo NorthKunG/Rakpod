@@ -43,21 +43,6 @@ services:
       - mysql 
       - mosquitto
 
-    nginx:
-      image: nginx:stable-alpine
-      container_name: api-nginx-proxy
-      ports:
-        - "80:80"   # Map host port 80 to container port 80 (for HTTP)
-        - "443:443" # Map host port 443 to container port 443 (for HTTPS)
-      volumes:
-        - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro # Mount your Nginx config
-        # Mount SSL certificate files from your host to the Nginx container
-        # Adjust these paths to where your actual .crt and .key files are on your host
-        - ./ssl:/etc/nginx/ssl:ro # Example: Host's ./ssl folder maps to /etc/nginx/ssl in container
-      depends_on:
-        - api # Ensure the API service starts before Nginx
-      restart: unless-stopped
-
   subscriber:
     container_name: rakpod-subscriber
     build: ./rakpod-api-service
