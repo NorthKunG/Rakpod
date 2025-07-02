@@ -118,7 +118,7 @@ const HomePageTest: FC<{ province?: string }> = ({ province }) => {
 
     return null;
   }
-  console.log("zoommmmmm", zoom)
+  console.log("zoom", zoom)
   return (
     <>
       <Helmet>
