@@ -39,7 +39,7 @@ const HomePage: React.FC = () => {
   };
 
   const getDataFromNewAPI = async () => {
-    const Url = "https://api-envy.adcm.co.th/weather-stationssssss";
+    const Url = "https://api-envy.adcm.co.th/weather-station";
     await axios.get(Url).then((response: AxiosResponse<any>) => {
       console.log(response.data);
       //setDevicesData(response.data);
