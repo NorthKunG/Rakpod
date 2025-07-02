@@ -27,8 +27,8 @@ services:
   api:
     container_name: rakpod-api
     build: ./rakpod-subscriber-service
-    #ports: # <--- ลบหรือคอมเมนต์บรรทัดนี้เพื่อไม่ให้ API เข้าถึงได้โดยตรงจาก Host
-    #  - "2542:2542"
+    ports:
+      - "2542:2542"
     environment:
       - TZ=Asia/Bangkok
     env_file:
@@ -45,9 +45,9 @@ services:
 
   subscriber:
     container_name: rakpod-subscriber
-    build: ./rakpod-api-service # <--- มีการสร้างจาก rakpod-api-service ด้วย
-    #ports: # <--- ถ้า subscriber ไม่ต้องเข้าถึงจากภายนอก ก็ลบ/คอมเมนต์ออก
-    #  - "2541:2541"
+    build: ./rakpod-api-service
+    ports:
+      - "2541:2541"
     environment:
       - TZ=Asia/Bangkok
     env_file:
@@ -65,29 +65,7 @@ services:
   web:
     container_name: rakpod-web
     build: ./rakpod-web
-    #ports: # <--- ลบหรือคอมเมนต์บรรทัดนี้เพื่อไม่ให้ Web App เข้าถึงได้โดยตรงจาก Host
-    #  - "3000:3000"
+    ports:
+      - "3000:3000"
     depends_on:
       - api
-
-  # เพิ่ม Service Nginx Reverse Proxy เข้ามา
-  nginx-proxy:
-    image: nginx:latest # ใช้ Nginx Official Image
-    ports:
-      - "80:80"   # เปิดพอร์ต 80 ของ Nginx ออกไปที่พอร์ต 80 ของ Host
-      - "443:443" # เปิดพอร์ต 443 ของ Nginx ออกไปที่พอร์ต 443 ของ Host (สำหรับ HTTPS)
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro # Mount main config
-      - ./nginx/conf.d/:/etc/nginx/conf.d/:ro     # Mount Virtual Host configs
-      # สำหรับ SSL Certificates (ถ้าใช้ Certbot บน Host)
-      # - /etc/letsencrypt/:/etc/letsencrypt/:ro # ตัวอย่าง: ถ้า Certbot เก็บใน Host
-      # - ./nginx/certs:/etc/nginx/certs:ro # หรือโฟลเดอร์ที่คุณเก็บ SSL Certificate ไว้
-    depends_on:
-      - web # Nginx ต้องรันหลังจาก Web Service
-      - api # Nginx ต้องรันหลังจาก API Service
-    restart: always
-
-# ไม่ต้องกำหนด networks แยก ถ้าใช้ default network
-# networks:
-#   default:
-#     driver: bridge
